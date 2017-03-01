@@ -2,28 +2,35 @@
 
 アイテムのデータを取得します。
 
-```
-GET https://your-host/your-mt-api.cgi/v2/sites/:site_id/assets/:asset_id
-```
-
-認証不要
-
-## メソッドパラメータ
-
-|パラメータ名|タイプ|説明|
-|---|---|---|
-|site_id|integer|サイトID|
-|asset_id|unsigned integer|アイテムID|
-
-## クエリパラメータ
-
-|パラメータ|タイプ|説明|
-|---|---|---|
-|fields|string|出力するフィールドをカンマ区切りで設定する。未指定の場合は全フィールドを出力する。初期値:なし|
-
-## 戻り値
-
-|パラメータ|タイプ|説明|
-|---|---|---|
+https://www.movabletype.jp/developers/data-api/v3-reference.html#assets-assets-get-4
 
 ## 例
+
+### 例1
+
+```javascript
+api.getAsset(siteId, assetId, function(response) {
+  if (response.error) {
+    // エラー処理
+    return;
+  }
+
+  // レスポンスデータを使った処理
+});
+```
+
+### 例2
+
+```javascript
+var param = {
+  fields: "label,url"
+};
+api.getAsset(siteId, assetId, function(response) {
+  if (response.error) {
+    // エラー処理
+    return;
+  }
+
+  // レスポンスデータを使った処理
+});
+```
